@@ -1,0 +1,9 @@
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[user]
+	name = glalica
+	email = gcabrera2@yahoo.com
+[core]
+	editor = atom --wait
