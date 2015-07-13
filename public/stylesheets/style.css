@@ -10,3 +10,4 @@ section > div         { padding: 20px;}
 header, nav, section, footer  { background: #eee; text-align: center;}
 /* nav span es el span detras de nav*/
 nav span              { margin: 0px 10px 0px 0px;}
+img                   { max-width: 50%; }
