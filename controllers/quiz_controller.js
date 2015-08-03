@@ -36,12 +36,12 @@ exports.create = function(req, res){
         res.render('quizes/new', {quiz: quiz, errors: err.errors});
       } else {
         quiz // save: guarda en DB campos pregunta y respuesta de quiz
-        .save({fields:["pregunta", "respuesta"]})
+        .save({fields: ["pregunta", "respuesta"]})
         .then(function(){ res.redirect('/quizes')})
         } //res.redirect: Rediccion HTTP a lista de preguntas
     }
   );
-);
+};
 
 // GET /quiizes
 exports.index = function(req, res){
@@ -66,6 +66,34 @@ exports.answer = function(req, res){
     res.render('quizes/answer',
                 {quiz: req.quiz, respuesta: resultado, errors: []});
 };
+
+// Get /quizes/:id/edit
+exports.edit = function(req, res){
+  var quiz = req.quiz; // Autoload de instancia de quiz
+
+  res.render('quizes/edit', {quiz: quiz, errors: []});
+};
+
+//Put /quizes/:id
+exports.update = function(req, res) {
+  req.quiz.pregunta  = req.body.quiz.pregunta;
+  req.quiz.respuesta = req.body.quiz.respuesta;
+
+  req.quiz
+  .validate()
+  .then (
+    function(err){
+      if (err) {
+        res.render('quizes/edit', {quiz: req.quiz, errors:err.errors});
+      }  else {
+          req.quiz  //save: guarda campos pregunta y respuesta en DB
+          .save({fields: ["pregunta", "respuesta"]})
+          .then( function(){ res.redirect('/quizes');});
+        }   // Redirección HTTP a lista de pregurntas (URL relativo)
+    }
+  );
+};
+
 
 exports.author = function(req, res){
   res.render('author', {});
