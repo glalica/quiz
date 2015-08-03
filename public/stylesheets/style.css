@@ -6,10 +6,16 @@ body                  { font: 16px Georgia, serif; }
 #page-wrap > .main    { border: 1px solid #999; padding: 1%;
                         margin-bottom: 1px; color: black;}
 
-section > div         { padding: 20px;}
+section > div         { padding: 10px;}
 header, nav, section  { background: #eee; text-align: center;}
 footer                { background: #eee; text-align: center;}
 /* nav span es el span detras de nav*/
 nav span              { margin: 0px 10px 0px 0px;}
 #ErrorMsgs            { color: #f61; font-size: smaler}
 img                   { max-width: 50%; }
+table                 { border: 1px solid black; border-spacing: 5px;
+                        height: auto;}
+table.preg            { width: 100%;   }
+tr.color              { background-color:#BDBDBD;}
+td.tam                { width: 15px;}
+tr, td                { padding: 1px; }
