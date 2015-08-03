@@ -5,7 +5,6 @@
     Pantalla ancha co el navegador en ventana de anchura mayor a 600px
         media="only screen and (max-width:600)and(min-device-width:481)"!-->
 <!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="utf-8"><title> Preguntas </title>
   <!--Siempre se carga !-->
@@ -18,7 +17,6 @@
         type="text/css"
         media="only screen and (max-width:480px)"
         href="/stylesheets/smartphone.css" />
-
 </head>
 
 <body>
@@ -29,12 +27,13 @@
 
   <nav class="main" id="n1" role="navigation">
     <span><a href="/">Inicio</a></span>
-    <span><a href="/quizes/question">Preguntas</a></span>
+    <span><a href="/quizes">Preguntas</a></span>
     <span><a href="/author">Créditos</a></span>
   </nav>
 
   <section class="main" id="s1">
-  <div><%- body %></div>
+    <div>
+    <%- body %> </div>
   </section>
 
   <footer class="main" id="f1">
