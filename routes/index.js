@@ -8,10 +8,9 @@ var quizController = require('../controllers/quiz_controller');
 router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz' });
 });
-/*router.get('/', function(req, res) {
-  res.render('creditos', {title: 'Quiz'});
-}*/
 
+// Autoload de comandos con :quizId
+router.param('quizId', quizController.load); //Autoload : quizId
 
 //añado los get de pregunta y respuesta
 //Nos lleva a importar las acciones asociadas
