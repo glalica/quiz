@@ -1,3 +1,4 @@
+console.log("------------models.js--------------------");
 // Define como se construye todo el Modelo
 var path = require('path');
 
@@ -44,7 +45,7 @@ sequelize.sync().then(function(){
         [ {pregunta: 'Capital de Italia', respuesta: 'Roma', tema: 'Otro'},
           {pregunta: 'Capital de Portugal', respuesta: 'Lisboa', tema: 'Otro'}
         ]
-      ).then(function(){console.log('Base de datos inicializada')});
+      ).then(function(){console.log('---------Base de datos inicializada-----------')});
   };
 });
 });

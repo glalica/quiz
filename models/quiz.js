@@ -1,3 +1,4 @@
+console.log("------------quiz.js--------------------");
 // Definicion del modelo de quiz
 //Crea una tabla con dos tipos
 // Quiz es el constructor de objetos
@@ -12,6 +13,10 @@
       respuesta: {
         type: DataTypes.STRING,
         validate: { notEmpty: {msg: "-> Falta Respuesta"}}
+      },
+      tema: {
+        type: DataTypes.STRING,
+        validate: { notEmpty: {msg: "-> Falta Tema"} }
       }
     }
   );

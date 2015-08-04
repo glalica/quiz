@@ -19,3 +19,13 @@ table.preg            { width: 100%;   }
 tr.color              { background-color:#BDBDBD;}
 td.tam                { width: 15px;}
 tr, td                { padding: 1px; }
+label                 {align-items: left;}
+/*div                   { margin: .4em 0;}
+div .formu            { width: 25%; float: left; }
+input                 { padding: .2em;}
+legend                { padding: .2em;}
+form label            { display: block;}*/
+fieldset              { max-width: 50em;}
+
+/*.formu                { display: block; margin: .5em 0 0 0;}
+/*div form              { margin: .4em 0;}*/

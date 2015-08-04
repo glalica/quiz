@@ -1,41 +1,42 @@
 
-<table >
+<br>
+<table>
   <tr>
-    <td WIDTH="150" heigh="500">
-      <table>
-        <tr><td>Escoge el tema:
-          <select size="2">
-            <option>Películas</option>
-            <option>Música</option>
-            <option>Deportes</option>
-            <option>Teatro</option>
-            <option>Libros</option>
-          </select>
-        </td></tr>
-        <tr><td wide=100%>
-          <a href="/quizes/new"><button type="button">Crear pregunta</button></td>
-        </tr>
-      </table>
-    </td>
-    <td>
-      <table class="preg">
-        <% var i; for (i=0; i < quizes.length; i++){ %>
-          <tr>
-            <td>
-              <a href="quizes/<%= quizes[i].id %>">
-              <%= quizes[i].pregunta %></a>
-            </td>
-            <td><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a>
-            </td>
-            <td>
-              <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
-                <button type="submit" onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');">
-                  borrar</button>
-              </form>
-            </td>
-          </tr>
-        <% } %>
-      </table>
-    </td>
-  </tr>
-</table>
+      <td>
+          <table>
+            <tr>
+              <td>
+              <form method="get" action="/quizes?search=texto_a_buscar">
+                  Búsqueda:
+                  <input type="text" name="search" value="Texto a buscar"/>
+                  <input type="submit" value="Buscar">
+              </form></td>
+            <tr>
+              <td>
+              <a href="/quizes/new"><button type="button">Crear pregunta</button></a></td>
+            </table>
+      <td>
+          <table>
+            <tr>
+              <td>Temas
+              <td>Preguntas
+              <td colspan="2">Acciones
+            </tr>
+            <% var i; for (i=0; i < quizes.length; i++) { %>
+            <tr>
+			         <td align="left"><%= quizes[i].tema %> </td>
+			         <td align="left"><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %> </a></td>
+			         <td><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></td>
+			         <td>
+			 	          <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
+			 		            <button type="submit" onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');">borrar</button>
+			 	          </form>
+			         </td>
+		       </tr>
+	          <% } %>
+          </table><p>
+        </td>
+        </table>
+
+
+<!--<img src="escribir1.png" />-->
