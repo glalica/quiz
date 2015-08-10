@@ -5,3 +5,11 @@ h2 span, section h3, label.rem { display: none; }
 body                { font-size: xx-large; }
 input, button       { font-size: x-large;}
 footer              { font-size: large; }
+/* Mio */
+.Table               { font-size: medium;}
+.divFloat           {font-size: medium;}
+.inputstyle         { font-size: medium;}
+.buttonstyle        { font-size: medium;}
+legend, label        { font-size: medium;}
+
+/*section, nav        { font-size: medium;}*/

@@ -21,10 +21,10 @@
 </head>
 
 <body>
-<div id="page-wrap">
-  <header class="main" id="h1">
-    <h2>Quiz<span>: el juego de las preguntas</span></h2>
-  </header>
+ <div id="page-wrap">
+    <header class="main" id="h1">
+      <h2>Quiz<span>: el juego de las preguntas</span></h2>
+    </header>
 
   <nav class="main" id="n1" role="navigation">
     <span><a href="/">Inicio</a></span>
@@ -33,6 +33,7 @@
   </nav>
 
   <section class="main" id="s1">
+    <div class="divBody"><%- body %> </div>
     <% if (errors.length) { %>
       <span id='ErrorMsgs'>
         Corregir Errores:<br/>
@@ -42,8 +43,9 @@
       </span>
     <% } %>
 
-    <div><%- body %> </div>
-  </section>
+  <!--  <div class="divLimpiador"> </div> -->
+   </section>
+
 
   <footer class="main" id="f1">
     <a href="http://es.wikipedia.org/wiki/Quiz">
