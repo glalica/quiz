@@ -1,8 +1,11 @@
-<form method="get" action="/quizes/<%= quiz.id %>/answer">
-  Pregunta: <%= quiz.pregunta %> <p>
-  <input type="text" name="respuesta" value="Respuesta" />
-  <input type="submit" value="Enviar">
-</form>
-<p>
-  <a href="/quizes">Volver</a>
-</p>
+<!-- Formulario de la pregunta -->
+<div class="divShow">
+  <form method="get" action="/quizes/<%= quiz.id %>/answer">
+     Pregunta: <label> <%= quiz.pregunta %> </label> <p><br>
+    <input type="text" name="respuesta" value="Respuesta" />
+    <input type="submit" value="Enviar">
+  </form>
+  <p>
+    <br><a href="/quizes">Volver</a>
+  </p>
+</div>

@@ -3,13 +3,21 @@ body  { background: #333; }
 
 h2 span, section h3, label.rem { display: none; }
 body                { font-size: xx-large; }
-input, button       { font-size: x-large;}
-footer              { font-size: large; }
+/*input, button       { font-size: x-large;}*/
 /* Mio */
 .Table               { font-size: medium;}
 .divFloat           {font-size: medium;}
 .inputstyle         { font-size: medium;}
 .buttonstyle        { font-size: medium;}
 legend, label        { font-size: medium;}
+.divShow {font-size: medium; padding: 10px;}
+#divCreacion {width: 300px; font-size: medium;}
 
-/*section, nav        { font-size: medium;}*/
+footer              { font-size: x-large; }
+
+
+#caja    {font-size: medium;}
+td span  {font-size: small}
+th span  {font-size: small}
+/*.main               { font-size: medium;}*/
+section  div        { padding: 0px;}

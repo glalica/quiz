@@ -1,45 +1,49 @@
-<div class="Contenedor">
-  <div class="Table">
-    <div class="Heading">
-      <div class="Cell"><p>Temas</p></div>
-      <div class="Cell"><p>Preguntas</p></div>
-      <div class="Cell"><p>Acciones</p></div>
-    </div>
-    <% var i; for (i=0; i < quizes.length; i++) { %>
-      <div class="Row">
-        <div class="Cell"><%= quizes[i].tema %></div>
-        <div class="Cell">
-          <a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></div>
-        <div class="Cell">
-          <div class="acciones">
-            <a href="quizes/<%= quizes[i].id %>/edit">
-            <button><img class="imgAcciones" src="images/edit.png"></button></a>
-          </div>
-          <div class="acciones">
-            <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
+<!-- Formulario que muestra las preguntas almacenadas -->
+<div>
+<div id="caja">
+  <table class="rwd_auto">
+    <thead>
+    <tr>
+      <th>Preguntas</th>
+      <th><span>Acciones</span></th>
+    </tr>
+    </thead>
+    <tbody>
+      <% var i; for (i=0; i < quizes.length; i++) { %>
+      <tr>
+        <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
+        <span> (<%= quizes[i].tema %>) </span>
+        </td>
+        <td class="tdiconos">
+          <a href="quizes/<%= quizes[i].id %>/edit">
+            <button><img class="imgAcciones" src="images/edit.png"></button>
+          </a>
+          <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
             <button type="submit" onClick="return confirm('Borrar:
-              <%= quizes[i].pregunta %>');"><img class="imgAcciones" src="images/Delete_icon_96.png">
+              <%= quizes[i].pregunta %>');"><img class="imgAcciones" src="images/delete.png">
             </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    <% } %>
-  </div> <!--Table-->
+          </form>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
 
-  <div class="divFloat">
-    <div>
+  <div id="caja">
+    <div id="acciones">
       <form method="get" action="/quizes?search=texto_a_buscar">
           Búsqueda:
           <input type="text" name="search" class="inputstyle" value="Texto a buscar"/>
           <input type="submit" value="Buscar" class="inputstyle">
       </form>
     </div>
-    <div>
+    <div id="acciones">
       <a href="/quizes/new"><button type="button" class="buttonstyle">Crear pregunta</button></a>
     </div>
   </div>
 
   <!--<div class="divlimpiador">Limpiador</div>-->
 
+</div>
 </div>

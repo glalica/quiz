@@ -1,6 +1,50 @@
-<fieldset>
-      <legend> Creación de Pregunta </legend>
-        <div class="divFloat">
+<!-- Formulario que me permite editar una Pregunta -->
+<!-- Es llamada por edit.ejs -->
+
+  <div id="divCreacion">
+
+    <table class="rwd_auto">
+      <tbody>
+        <tr>
+          <td><label for="preg" class="formu" padding=".2em" >Pregunta:</label></td>
+          <td><input type="text" id="preg" class="inputstyle" padding=".2em" name="quiz[pregunta]" value="<%= quiz.pregunta %>"/></td>
+        </tr>
+        <tr>
+          <td><br><label for="resp" class="formu">Respuesta:</label></td>
+          <td><input type="text" class="inputstyle" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>" /></td>
+        </tr>
+        <tr>
+          <td><div><br><p><label for="tema" class="formu">Tema:</label> </td>
+          <td>
+            <select name="quiz[tema]" size="1">
+              <option value="Otro" selected>Otro</option>
+              <option value="Humanidades">Humanidades</option>
+              <option value="Ocio">Ocio</option>
+              <option value="Ciencia">Ciencia</option>
+              <option value="Tecnologia">Tecnología</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="accionesCreacion">
+            <br><a href="/quizes"><button class="buttonstyle" type="button">Cancelar</button></a>
+            <input type="submit" class="inputstyle" value="Salvar">
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+<!--<fieldset>-->
+      <!--<legend> Creación <span>Edición</span> de Pregunta  </legend>-->
+<!--        <div class="divFloat">
         <label for="preg" class="formu" padding=".2em" >Pregunta:</label>
         <input type="text" id="preg" class="inputstyle" padding=".2em" name="quiz[pregunta]" value="<%= quiz.pregunta %>"/>
         </div>
@@ -19,4 +63,4 @@
         </div>
         <br><a href="/quizes"><button class="buttonstyle" type="button">Cancelar</button></a>
         <input type="submit" class="inputstyle" value="Salvar">
-  </fieldset>
+  </fieldset> -->

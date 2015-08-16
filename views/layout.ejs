@@ -6,6 +6,7 @@
         media="only screen and (max-width:600)and(min-device-width:481)"!-->
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8"><title> Preguntas </title>
   <!--Siempre se carga !-->
@@ -20,8 +21,10 @@
         href='/stylesheets/smartphone.css' />
 </head>
 
+
 <body>
  <div id="page-wrap">
+
     <header class="main" id="h1">
       <h2>Quiz<span>: el juego de las preguntas</span></h2>
     </header>
@@ -33,7 +36,6 @@
   </nav>
 
   <section class="main" id="s1">
-    <div class="divBody"><%- body %> </div>
     <% if (errors.length) { %>
       <span id='ErrorMsgs'>
         Corregir Errores:<br/>
@@ -42,7 +44,7 @@
         <% } %>
       </span>
     <% } %>
-
+    <div><%- body %></div>
   <!--  <div class="divLimpiador"> </div> -->
    </section>
 
