@@ -5,7 +5,9 @@
     <thead>
     <tr>
       <th>Preguntas</th>
-      <th><span>Acciones</span></th>
+      <%if (session.user){%>
+        <th><span>Acciones</span></th>
+      <%}%>
     </tr>
     </thead>
     <tbody>
@@ -14,16 +16,18 @@
         <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
         <span> (<%= quizes[i].tema %>) </span>
         </td>
-        <td class="tdiconos">
-          <a href="quizes/<%= quizes[i].id %>/edit">
-            <button><img class="imgAcciones" src="images/edit.png"></button>
-          </a>
-          <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
-            <button type="submit" onClick="return confirm('Borrar:
-              <%= quizes[i].pregunta %>');"><img class="imgAcciones" src="images/delete.png">
-            </button>
-          </form>
-        </td>
+        <%if (session.user){%>
+          <td class="tdiconos">
+            <a href="quizes/<%= quizes[i].id %>/edit">
+              <button><img class="imgAcciones" src="images/edit.png"></button>
+            </a>
+            <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
+              <button type="submit" onClick="return confirm('Borrar:
+                <%= quizes[i].pregunta %>');"><img class="imgAcciones" src="images/delete.png">
+              </button>
+            </form>
+          </td>
+        <%}%>
       </tr>
       <% } %>
     </tbody>
@@ -38,9 +42,12 @@
           <input type="submit" value="Buscar" class="inputstyle">
       </form>
     </div>
+
+    <%if (session.user){%>
     <div id="acciones">
       <a href="/quizes/new"><button type="button" class="buttonstyle">Crear pregunta</button></a>
     </div>
+    <%}%>
   </div>
 
   <!--<div class="divlimpiador">Limpiador</div>-->
