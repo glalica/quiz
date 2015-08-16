@@ -64,6 +64,10 @@ button                        { float: left;}
 #acciones button              { float: none;}
 .divShow label {font-size: x-large; color: #0101DF}
 #divCreacion {margin: 4px auto ; width: 400px;}
+#divcomentario   button     {float: none;}
+.divShow  {display: inline-block; float: left; margin: 10px; width: 40%}
+#divcomentario {display: inline-block; float: left; margin: 10px; width: 40%; }
+#pcomentarios {padding: 10px; font-size: large;}
 
 /*table                       { border: 1px solid black; border-spacing: 5px;
                                 height: auto;}

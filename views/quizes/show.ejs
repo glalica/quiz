@@ -1,11 +1,25 @@
 <!-- Formulario de la pregunta -->
-<div class="divShow">
+<div>
+ <div class="divShow">
   <form method="get" action="/quizes/<%= quiz.id %>/answer">
-     Pregunta: <label> <%= quiz.pregunta %> </label> <p><br>
+    <label> <%= quiz.pregunta %> </label> <p><br>
     <input type="text" name="respuesta" value="Respuesta" />
     <input type="submit" value="Enviar">
   </form>
   <p>
     <br><a href="/quizes">Volver</a>
   </p>
+  </div>
+
+  <div id="divcomentario">
+    <p id="pcomentarios"><strong>Comentarios:</strong></p>
+    <%for(index in quiz.Comments){%>
+      <p>- <%=quiz.Comments[index].texto%></p>
+    <%}%>
+    <br><p><a href="/quizes/<%= quiz.id %>/comments/new">
+       <button>Nuevo comentario</button></a>
+    </p>
+  </div>
+
+
 </div>

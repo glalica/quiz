@@ -21,3 +21,5 @@ td span  {font-size: small}
 th span  {font-size: small}
 /*.main               { font-size: medium;}*/
 section  div        { padding: 0px;}
+#divcomentario {font-size: medium;min-width: 90%;}
+.divShow {font-size: medium;min-width: 90%;}
