@@ -6,6 +6,8 @@ var router = express.Router();
 //var quizController = require('../controllers/quiz_controller');
 var quizController = require('../controllers/quiz_controller.js');
 var commentController = require('../controllers/comment_controller.js');
+var sessionController = require('../controllers/session_controller');
+
 //var commentController = require('../controllers/comment_controller');
 /* GET home page. */
 
@@ -17,6 +19,12 @@ router.get('/', function(req, res) {
 
 // Autoload de comandos con :quizId
 router.param('quizId', quizController.load); //Autoload : quizId
+
+// Definicion de rutas de session
+router.get('/login',  sessionController.new);     // formulario login
+router.post('/login', sessionController.create);  // crear session
+//deberia ser router.delete  ¿pero no se porque lo pusieron asl?
+router.get('/logout', sessionController.destroy); // destruir sesion
 
 //añado los get de pregunta y respuesta
 //Nos lleva a importar las acciones asociadas
