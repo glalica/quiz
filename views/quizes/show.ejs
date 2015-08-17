@@ -14,15 +14,19 @@
   <div id="divcomentario">
     <p id="pcomentarios"><strong>Comentarios:</strong></p>
     <%for(index in quiz.Comments){%>
-      <p>- <%=quiz.Comments[index].texto%></p>
+      <%if(quiz.Comments[index].publicado || session.user) {%>
+        <p>- <%=quiz.Comments[index].texto%>
+          <%if (session.user && !quiz.Comments[index].publicado){%>
+            <a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>/publish">
+              <button>Publicar</button></a>
+          <%}%>
+        </p>
+      <%}%>
     <%}%>
 
-    <%if (session.user){%>
     <br><p><a href="/quizes/<%= quiz.id %>/comments/new">
        <button>Nuevo comentario</button></a>
     </p>
-    <%}%>
-  </div>
-
+  <div>
 
 </div>

@@ -19,7 +19,7 @@ router.get('/', function(req, res) {
 
 // Autoload de comandos con :quizId
 router.param('quizId', quizController.load); //Autoload : quizId
-
+router.param('commentId', commentController.load);  //Autoload :commentId
 // Definicion de rutas de session
 router.get('/login',  sessionController.new);     // formulario login
 router.post('/login', sessionController.create);  // crear session
@@ -40,6 +40,9 @@ router.delete('/quizes/:quizId(\\d+)',      sessionController.loginRequired, qui
 
 router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new);
 router.post('/quizes/:quizId(\\d+)/comments',    commentController.create);
+//aqui debería ser router.put(......) por la interfaz res
+router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish',
+    sessionController.loginRequired, commentController.publish);
 
 //Nuevo
 router.get('/temas',                        quizController.showtemas);

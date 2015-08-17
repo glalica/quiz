@@ -10,7 +10,7 @@ table.rwd_auto                {border: 1px solid #ccc; width: 100% margin:0 0 50
 table.rwd_auto                {width: auto; min-width: 100px;}
       .rwd_auto th, .rwd_auto td {white-space: nowrap;}
 
-#caja                         { display: inline-block; float: left; margin: 10px;}
+#caja                         { display: inline-block; float: left; margin: 10px;width: 45%;}
 #acciones                     { padding-top: 20px;}
 #logout                       { font-size: small}
     /* Smartphones (portrait and landscape) ----------- */
