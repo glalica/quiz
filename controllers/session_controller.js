@@ -28,10 +28,10 @@ exports.create = function(req, res) {
       res.redirect("/login");
       return;
   }
-
   // Crear req.sesion.user y guardar campos id y username
   // La sesion se define por la existemcia de req.session.use
-  req.session.user ={id:user.id, username:user.username};
+  //req.session.user ={id:user.id, username:user.username};
+  req.session.user ={id:user.id, username:user.username, lastClickTime:new Date().getTime()};
   res.redirect(req.session.redir.toString()); // rediccion a paht anterior a login
 });
 };
