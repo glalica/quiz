@@ -10,9 +10,11 @@ nav                 { font-size: medium;}
 .divFloat           {font-size: medium;}
 .inputstyle         { font-size: medium;}
 .buttonstyle        { font-size: medium;}
-#ulStatistic        { font-size: medium; font-size: medium; text-align: left; margin-left: 40px;}
+#ulStatistic        { font-size: medium;margin-left: 40px;}
 #divAnswer          { margin: 50px;}
 #thacciones         { min-width: 20px;}
+#divStatistic       { margin-left: 0%; margin-top: 10%; margin-bottom: 10%; }
+#divStatistic h3    { display: true;}
 legend, label        { font-size: medium;}
 .divShow {font-size: medium; padding: 10px;}
 #divCreacion {width: 300px; font-size: medium;}

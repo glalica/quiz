@@ -16,6 +16,8 @@ table.rwd_auto                {width: auto; min-width: 100px;}
 #thacciones                   { min-width: 20px; }
 #logout                       { font-size: small}
 #page-wrap                    { margin: 2% auto; color: white; background-color: white;}
+#ulStatistic                  { text-align: left; }
+#divStatistic                 { margin-left: 25%; }
 /*#page-wrap                    { background-color: white;}*/
 
 #page-wrap > .main            { border: 1px solid #999; padding: 1%;
