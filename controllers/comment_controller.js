@@ -17,7 +17,11 @@ exports.load = function(req, res, next, commentId) {
 
 // GET /quizes/:quizId/comment/new
 exports.new = function(req, res) {
+  //p2p por si el usuario no entra algún comentario
+  //if (req.params.quizId){
+  //console.log(" No hay comentrio: " + req.params.quizId);
   res.render('comments/new.ejs', {quizid: req.params.quizId, errors:[]});
+ //}
 };
 
 // POST /quizes/: quizId/comment
@@ -26,13 +30,14 @@ exports.create = function(req,res) {
     { texto:  req.body.comment.texto,
       QuizId: req.params.quizId
     });
+
   comment
   .validate()
   .then(
     function(err){
       if (err){
-        res.render('comment/new.ejs',
-        {comment: comment, quizId:req.params.quizId, errors: err.errors});
+        res.render('comments/new.ejs',
+        {comment: comment, quizid:req.params.quizId, errors: err.errors});
       } else {
         comment //save: guarda en DB campo texto de comment
         .save()

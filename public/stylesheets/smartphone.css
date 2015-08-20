@@ -3,12 +3,16 @@ body  { background: #333; }
 
 h2 span, section h3, label.rem { display: none; }
 body                { font-size: xx-large; }
+nav                 { font-size: medium;}
 /*input, button       { font-size: x-large;}*/
 /* Mio */
 .Table               { font-size: medium;}
 .divFloat           {font-size: medium;}
 .inputstyle         { font-size: medium;}
 .buttonstyle        { font-size: medium;}
+#ulStatistic        { font-size: medium; font-size: medium; text-align: left; margin-left: 40px;}
+#divAnswer          { margin: 50px;}
+#thacciones         { min-width: 20px;}
 legend, label        { font-size: medium;}
 .divShow {font-size: medium; padding: 10px;}
 #divCreacion {width: 300px; font-size: medium;}

@@ -7,7 +7,7 @@ var router = express.Router();
 var quizController = require('../controllers/quiz_controller.js');
 var commentController = require('../controllers/comment_controller.js');
 var sessionController = require('../controllers/session_controller');
-
+var statisticsController = require('../controllers/statistics_controller');
 //var commentController = require('../controllers/comment_controller');
 /* GET home page. */
 
@@ -29,7 +29,7 @@ router.get('/logout', sessionController.destroy); // destruir sesion
 //añado los get de pregunta y respuesta
 //Nos lleva a importar las acciones asociadas
 // a answer y a question
-router.get('/quizes',                        quizController.index);
+router.get('/quizes',                       quizController.index);
 router.get('/quizes/:quizId(\\d+)',         quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer',  quizController.answer);
 router.get('/quizes/new',                   sessionController.loginRequired, quizController.new);
@@ -43,15 +43,12 @@ router.post('/quizes/:quizId(\\d+)/comments',    commentController.create);
 //aqui debería ser router.put(......) por la interfaz res
 router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish',
     sessionController.loginRequired, commentController.publish);
-
 //Nuevo
 router.get('/temas',                        quizController.showtemas);
 router.get('temas/:tema',                   quizController.showbytema);
-//router.get('/quizes/quest ion', quizController.question);
-//router.get('/quizes/answer', quizController.answer);
 
-//router.get('/author', quizController.author);
-//Nuevo
+router.get('/quizes/statistics',               statisticsController.show);
+
 router.get('/author',function(req,res){
 	res.render('author', {
 				fotoPerfil: '/images/foto.jpg',

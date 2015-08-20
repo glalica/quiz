@@ -5,7 +5,6 @@ var models = require('../models/models.js');
 
 // Autoload - Factoriza el código, si ruta inccluue quizId
 exports.load = function(req, res, next, quizId) {
-  console.log("------------load--------------------");
   //models.Quiz.findById(quizId).then(
   models.Quiz.find({
     where: { id: Number(quizId)},
@@ -23,7 +22,6 @@ exports.load = function(req, res, next, quizId) {
 
 // Nueva
 exports.loadtema = function(req, res, next, tema){
-    console.log("------------loadtema--------------------");
   models.Quiz.find(tema).then(
     function(tema){
       if (tema){
@@ -38,8 +36,7 @@ exports.loadtema = function(req, res, next, tema){
 
 // GET /quizes/new
 exports.new = function(req, res){
-  console.log("------------new--------------------");
-    var quiz = models.Quiz.build( //Crea objeto Quiz
+  var quiz = models.Quiz.build( //Crea objeto Quiz
       { pregunta: "Pregunta", respuesta: "Respuesta", tema: "Tema"}
   );
   res.render('quizes/new', {quiz: quiz, errors: []});
@@ -47,7 +44,6 @@ exports.new = function(req, res){
 
 // POST /quizes/create
 exports.create = function(req, res){
-console.log("------------create--------------------");
   var quiz = models.Quiz.build(req.body.quiz);
   // guarda en DB los campos pregunta y respuesta de quiz
   quiz
@@ -65,21 +61,8 @@ console.log("------------create--------------------");
   );
 };
 
-// GET /quiizes
-// Nueva
-//exports.index = function(req, res){
-//  console.log("------------index--------------------");
-//  models.Quiz.findAll().then(
-//    function(quizes) {
-//      res.render('quizes/index.ejs', {quizes: quizes, errors: []});
-//    }
-//  )
-//  ).catch(function(error) { next (error);})-->
-//};
-
 // Nueva
 exports.index = function(req, res){
-  console.log("------------index--------------------");
   if (typeof(req.query.search) != 'undefined'){
     models.Quiz.findAll({
         where: ["pregunta like ?", '%' + req.query.search + '%'],
@@ -87,7 +70,7 @@ exports.index = function(req, res){
         }
       ).then(function(quizes){
         if (typeof(quizes != 'undefined')){
-          res.render('quizes/index', {quizes: quizes, errors: []});
+          res.render('quizes/index.ejs', {quizes: quizes, errors: []});
         }
         }
        ).catch(function(error) {next(error);})
@@ -96,9 +79,9 @@ exports.index = function(req, res){
 				order : 'tema ASC'}
 		  ).then(
 			  function(quizes) {
-				 res.render('quizes/index', { quizes: quizes, errors: []});
+				 res.render('quizes/index.ejs', { quizes: quizes, errors: []});
 			  }
-      ) //.catch(function(error) { next(error);})
+      ) .catch(function(error) { next(error)});
 	     }
      };
 
